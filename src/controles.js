@@ -11,6 +11,10 @@ function procesarControles(){
     else if(Tecla.Izquierda){
         moverJugadorIzquierda();
     }
+
+    if (Tecla.Salto){ //no pongo else if porque pude hacer ambas mover y saltar
+        saltarJugador();
+    }
 }
 
 document.addEventListener("keydown", function(event){
