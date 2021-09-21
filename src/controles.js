@@ -11,6 +11,9 @@ function procesarControles(){
     else if(Tecla.Izquierda){
         moverJugadorIzquierda();
     }
+    else{
+        jugador.velocidad.x=0;//asi no esta corriendo sobre el lugar
+    }
 
     if (Tecla.Salto){ //no pongo else if porque pude hacer ambas mover y saltar
         saltarJugador();

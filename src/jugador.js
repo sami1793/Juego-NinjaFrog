@@ -1,4 +1,11 @@
+var spritesJugador={
+    DESCANSANDO:crearSprite("recursos/Main Characters/Ninja Frog/Idle (32x32).png",32,32),
+    CORRIENDO: crearSprite("recursos/Main Characters/Ninja Frog/Run (32x32).png",32,32),
+    SALTANDO: crearSprite("recursos/Main Characters/Ninja Frog/Jump (32x32).png",32,32),
+};
+
 var jugador = {
+    estado:"DESCANSANDO",
     x: 0,
     y: 300,
     velocidad:{
@@ -9,20 +16,30 @@ var jugador = {
     cuadroActual:0,
     fuerzaSalto:-15,
     //creo la imagen
-    sprite: new Image(),
+    spriteActual: spritesJugador.DESCANSANDO,
+    sprites:spritesJugador,
     puede:{
         saltar: false,
     }
 };
 
-jugador.sprite.src = "recursos/Main Characters/Ninja Frog/Idle (32x32).png";
+
+function crearSprite(ruta, anchoCuadro, altoCuadro){
+    var sprite = new Image();
+    sprite.src=ruta;
+    return{
+        sprite,
+        anchoCuadro,
+        altoCuadro
+    }
+}
 
 function moverJugadorDerecha(){
-    jugador.x+= jugador.velocidad.x;
+    jugador.velocidad.x= 5;
     jugador.direccion=1;
 }
 function moverJugadorIzquierda(){
-    jugador.x-=jugador.velocidad.x;
+    jugador.velocidad.x= -5;
     jugador.direccion=-1;
 }
 
