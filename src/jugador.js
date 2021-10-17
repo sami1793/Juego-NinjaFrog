@@ -24,15 +24,7 @@ var jugador = {
 };
 
 
-function crearSprite(ruta, anchoCuadro, altoCuadro){
-    var sprite = new Image();
-    sprite.src=ruta;
-    return{
-        sprite,
-        anchoCuadro,
-        altoCuadro
-    }
-}
+
 
 function moverJugadorDerecha(){
     jugador.velocidad.x= 5;

@@ -35,6 +35,8 @@ function ejecutarBucle(){
     //Bucle que se ejecuta muchas veces por segundo
     borrarPantalla();
     actualizarSprite();
+    dibujarFondo();
+    dibujarNivel();
     dibujarSprite();
     procesarControles();
 
